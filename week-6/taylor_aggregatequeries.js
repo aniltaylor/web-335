@@ -7,31 +7,31 @@
 //mongosh "mongodb+srv://web335db.10q16z.mongodb.net/web335DB" --apiVersion 1 --username web335_user
 
 // Query to show all docs in the houses collection
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.houses.find({})
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.houses.find({})
 
 
 // Query to show all docs in the students collection
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.find({})
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.find({})
 
 
 // Query to add a doc to the students collection
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.insertOne({"firstName": "Pomona", "lastName": "Sprout", "studentId": "s1013", "houseId": "h1008"})
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.insertOne({"firstName": "Pomona", "lastName": "Sprout", "studentId": "s1013", "houseId": "h1008"})
 
 
 // Query to find just added student
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.findOne({"firstName": "Pomona"})
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.findOne({"firstName": "Pomona"})
 
 
 // Query to delete the added student
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.deleteOne({"firstName": "Pomona"})
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.deleteOne({"firstName": "Pomona"})
 
 
 // Query to make sure student was deleted
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.findOne({"firstName": "Pomona"})
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.findOne({"firstName": "Pomona"})
 
 
 // Query to show list of students by their houses
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.aggregate([
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.aggregate([
 {
 $lookup:{
 "from": "students",
@@ -41,7 +41,7 @@ $lookup:{
   
 
 // Query to show list of students for Gryffindor
-Atlas atlas-pp60gp-shard-0 [primary] web335DB> db.students.aggregate([
+Atlas atlas-10q16z-shard-0 [primary] web335DB> db.students.aggregate([
   {
     $lookup:{
       "from": "students",
